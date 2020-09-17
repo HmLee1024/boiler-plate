@@ -28,6 +28,8 @@ app.get('/', (req, res) => {
   res.send('Hello World! 안녕하세요 끼루룩')
 })
 
+app.get('/api/hello', (req, res) => res.send('Hello World!!'))
+
 //화원가입의 필요한 정보를 client에서 가져와 DB에 저장
 app.post('/api/register', (req, res) => {
 

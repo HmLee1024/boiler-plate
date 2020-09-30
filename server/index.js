@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 app.get('/api/hello', (req, res) => res.send('Hello World!!'))
 
 //화원가입의 필요한 정보를 client에서 가져와 DB에 저장
-app.post('/api/register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
 
     const user = new User(req.body)
     //mongoDB 메소드 save
@@ -43,7 +43,7 @@ app.post('/api/register', (req, res) => {
 })
 
 //로그인
-app.post('/api/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
   //요청된 이메일 DB에 있는지 찾기
   User.findOne({
     email: req.body.email
